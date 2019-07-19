@@ -2,7 +2,7 @@ package com.kodilla.testing.collection;
 import java.util.ArrayList;
 
 public class OddNumbersExterminator {
-    Integer size = null;
+    public Integer size = null;
     public void exterminator(ArrayList<Integer> numbers) {
         ArrayList<Integer> podzielne = new ArrayList<Integer>();
 
@@ -13,5 +13,9 @@ public class OddNumbersExterminator {
             }
             size = podzielne.size();
         }
+    }
+
+    public Integer getSize(){
+        return size;
     }
 }
