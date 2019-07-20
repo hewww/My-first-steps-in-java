@@ -20,6 +20,5 @@ public class ShapeCollector {
     }
 
     public void showFigures() {
-
     }
 }

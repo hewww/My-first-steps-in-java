@@ -29,11 +29,9 @@ import org.junit.*;
         ArrayList<Integer> numbers = new ArrayList<>();
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
         oddNumbersExterminator.exterminator(numbers);
-        if(numbers.size() != 0) {
-            System.out.println("Cos jest w lisice . Error");
-        } else {
-            System.out.println("Lista pusta , test udany");
-        }
+        Integer size = numbers.size();
+        Integer zero = 0;
+        Assert.assertEquals(zero, size);
     }
 
     @Test
@@ -51,7 +49,8 @@ import org.junit.*;
         oddNumbersExterminator.exterminator(numbers);
 
         //Then
+        Integer piec = 5;
         Integer sizee = oddNumbersExterminator.size;
-        Assert.assertEquals(5, oddNumbersExterminator.getSize());
+        Assert.assertEquals(piec, oddNumbersExterminator.getSize());
     }
 }

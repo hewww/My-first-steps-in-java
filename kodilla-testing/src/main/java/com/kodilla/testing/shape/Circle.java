@@ -2,7 +2,6 @@ package com.kodilla.testing.shape;
 
 public class Circle implements Shape {
 
-    Circle circle;
     String shapeName = "Circle";
     Integer shapeField = 25;
     public Circle(String shapeName, Integer shapeField) {
