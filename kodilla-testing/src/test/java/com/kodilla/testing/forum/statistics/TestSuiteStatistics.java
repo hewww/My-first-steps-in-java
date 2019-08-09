@@ -16,7 +16,11 @@ public class TestSuiteStatistics {
 
         Statistics statisticsMock = mock(Statistics.class);
 
-        when(statisticsMock.usersNames().size()).thenReturn(1000);
+        List<String> usersNames = new ArrayList<>();
+        for(int i=0; i < 1000; i++) {
+            usersNames.add("nic");
+        }
+        when(statisticsMock.usersNames()).thenReturn(usersNames);
         when(statisticsMock.commentsCount()).thenReturn(10);
         when(statisticsMock.postsCount()).thenReturn(50);
         CalculateStatistics calculateStatistics = new CalculateStatistics();
@@ -24,9 +28,12 @@ public class TestSuiteStatistics {
 
         calculateStatistics.calculateAdvStatistics(statisticsMock);
 
-        int x = calculateStatistics.getAverageP();
+        int averagePValue = calculateStatistics.getAverageP();
+        //int averageCperUValue = calculateStatistics.getAverageCperU();
+        //int averageCperPValue = calculateStatistics.getAverageCperP();
 
-        Assert.assertEquals(5 ,x);
+
+        Assert.assertEquals(5 ,averagePValue);
 
     }
 

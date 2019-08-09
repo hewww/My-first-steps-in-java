@@ -6,6 +6,8 @@ import java.util.List;
 public class CalculateStatistics {
     Statistics statistics;
     private int averageP;
+    private int averageCperU;
+    private int averageCperP;
 
 
 
@@ -19,9 +21,9 @@ public class CalculateStatistics {
 
         averageP = postsCount / commentsCount;
 
-        int averageCperU = commentsCount / usersCount;
+        averageCperU = commentsCount / usersCount;
 
-        int averageCperP = commentsCount / postsCount;
+        averageCperP = commentsCount / postsCount;
 
 
     }
@@ -29,6 +31,8 @@ public class CalculateStatistics {
     public int getAverageP() {
         return averageP;
     }
+    public int getAverageCperU() { return averageCperU;}
+    public int getAverageCperP() { return averageCperP;}
 }
 
 
