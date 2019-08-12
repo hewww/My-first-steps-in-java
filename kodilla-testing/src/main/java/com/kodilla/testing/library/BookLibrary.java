@@ -21,6 +21,13 @@ public class BookLibrary {
     }
 
     public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
-        return null;
+        List<Book> listBooksInHandsOf = new ArrayList<>();
+
+        if(listBooksInHandsOf.size() >= 1) {
+            return listBooksInHandsOf;
+        } else {
+            return null;
+        }
+
     }
 }
