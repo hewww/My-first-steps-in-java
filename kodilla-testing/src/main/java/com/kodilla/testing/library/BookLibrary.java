@@ -1,7 +1,5 @@
 package com.kodilla.testing.library;
 
-        import jdk.nashorn.internal.ir.annotations.Ignore;
-
         import java.util.ArrayList;
         import java.util.List;
 
@@ -21,7 +19,7 @@ public class BookLibrary {
         bookList = resultList;
         return bookList;
     }
-    @Ignore
+
     public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
         return null;
     }

@@ -19,6 +19,18 @@ public class CalculateStatistics {
 
         int postsCount = statistics.postsCount();
 
+        if(commentsCount == 0) {
+            commentsCount = 1;
+        }
+
+        if(postsCount == 0) {
+            postsCount = 1;
+        }
+
+        if(usersCount ==0) {
+            usersCount = 1;
+        }
+
         averageP = postsCount / commentsCount;
 
         averageCperU = commentsCount / usersCount;

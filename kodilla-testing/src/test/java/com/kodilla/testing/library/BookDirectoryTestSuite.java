@@ -1,5 +1,6 @@
 package com.kodilla.testing.library;
 
+import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -87,11 +88,45 @@ public class BookDirectoryTestSuite {
         verify(libraryDatabaseMock, times(0)).listBooksWithCondition(anyString());
     }
 
-    @Ignore
-    public void testListBooksInHandsOf() {
+    @Test
+    public void testListBooksInHandsOf5() {
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
-        LibraryUser libraryUser1 = new LibraryUser("Jan", "Kowalksi", "42050");
-        //List<Book> listBooksInHandsOf ();
+        LibraryUser libraryUser1 = new LibraryUser("Jan", "Kowalski", "42050");
+        List<Book> listBooksInHandsOf = new ArrayList<>();
+        when(libraryDatabaseMock.listBooksInHandsOf(libraryUser1)).thenReturn(listBooksInHandsOf);
+
+        listBooksInHandsOf = generateListOfNBooks(5);
+        int listSize = listBooksInHandsOf.size();
+
+        Assert.assertEquals(5,listSize);
+    }
+
+    @Test
+    public void testListBooksInHandsOf1() {
+        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
+        BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
+        LibraryUser libraryUser1 = new LibraryUser("Jan", "Kowalski", "42050");
+        List<Book> listBooksInHandsOf = new ArrayList<>();
+        when(libraryDatabaseMock.listBooksInHandsOf(libraryUser1)).thenReturn(listBooksInHandsOf);
+
+        listBooksInHandsOf = generateListOfNBooks(1);
+        int listSize = listBooksInHandsOf.size();
+
+        Assert.assertEquals(1,listSize);
+    }
+
+    @Test
+    public void testListBooksInHandsOf0() {
+        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
+        BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
+        LibraryUser libraryUser1 = new LibraryUser("Jan", "Kowalski", "42050");
+        List<Book> listBooksInHandsOf = new ArrayList<>();
+        when(libraryDatabaseMock.listBooksInHandsOf(libraryUser1)).thenReturn(listBooksInHandsOf);
+
+        listBooksInHandsOf = generateListOfNBooks(0);
+        int listSize = listBooksInHandsOf.size();
+
+        Assert.assertEquals(0,listSize);
     }
 }

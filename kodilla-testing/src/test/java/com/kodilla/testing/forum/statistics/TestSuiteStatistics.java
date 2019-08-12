@@ -56,7 +56,7 @@ public class TestSuiteStatistics {
         Assert.assertEquals(5 ,averagePValue);
     }
 
-    //ERROR
+    //OK
     @Test
     public void test0Comments() {
         Statistics statisticsMock = mock(Statistics.class);
@@ -78,7 +78,7 @@ public class TestSuiteStatistics {
         int averageCperPValue = calculateStatistics.getAverageCperP();
 
 
-        Assert.assertEquals(0 ,averagePValue);
+        Assert.assertEquals(50 ,averagePValue);
     }
 
     //OK
@@ -121,7 +121,7 @@ public class TestSuiteStatistics {
         Assert.assertEquals(0 ,averagePValue);
     }
 
-    //ERROR
+    //OK
     @Test
     public void test0Users() {
         Statistics statisticsMock = mock(Statistics.class);
@@ -160,12 +160,6 @@ public class TestSuiteStatistics {
 
         Assert.assertEquals(1 ,averageCperUValue);
     }
-
-
-
-
-
-
 
 }
 
