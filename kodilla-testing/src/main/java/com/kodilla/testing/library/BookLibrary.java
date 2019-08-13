@@ -1,7 +1,8 @@
+
 package com.kodilla.testing.library;
 
-        import java.util.ArrayList;
-        import java.util.List;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BookLibrary {
     LibraryDatabase libraryDatabase;
@@ -21,13 +22,8 @@ public class BookLibrary {
     }
 
     public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
-        List<Book> listBooksInHandsOf = new ArrayList<>();
 
-        if(listBooksInHandsOf.size() >= 1) {
-            return listBooksInHandsOf;
-        } else {
-            return null;
-        }
-
+        return libraryDatabase.listBooksInHandsOf(libraryUser);
     }
+
 }
