@@ -5,3 +5,7 @@ pluginManagement {
 }
 rootProject.name = 'kodilla-course'
 include 'kodilla-testing'
+include 'com.kodilla.stream'
+include 'stream'
+include 'kodilla-stream'
+

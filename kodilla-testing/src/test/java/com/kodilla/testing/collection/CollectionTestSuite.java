@@ -2,7 +2,7 @@ package com.kodilla.testing.collection;
 import java.util.ArrayList;
 import org.junit.*;
 
-    public class CollectionTestSuite {
+public class CollectionTestSuite {
 
     @Before
     public void before(){
@@ -34,23 +34,24 @@ import org.junit.*;
         Assert.assertEquals(zero, size);
     }
 
-    @Test
-    public void testOddNumbersExterminatorNormalList() {
-        System.out.println("Rozpoczynam test dla zapełnionej ArrayList");
+        @Test
+        public void testOddNumbersExterminatorNormalList() {
+            System.out.println("Rozpoczynam test dla zapełnionej ArrayList");
 
-        //Give
-        ArrayList<Integer> numbers = new ArrayList<>();
-        for(Integer i = 1; i <= 10; i++) {
-            numbers.add(i);
+            //Give
+            ArrayList<Integer> numbers = new ArrayList<>();
+            for(Integer i = 1; i <= 10; i++) {
+                numbers.add(i);
+            }
+
+            //When
+            OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
+            oddNumbersExterminator.exterminator(numbers);
+
+            //Then
+            Integer piec = 5;
+            Integer sizee = oddNumbersExterminator.size;
+            Assert.assertEquals(piec, oddNumbersExterminator.getSize());
         }
 
-        //When
-        OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
-        oddNumbersExterminator.exterminator(numbers);
-
-        //Then
-        Integer piec = 5;
-        Integer sizee = oddNumbersExterminator.size;
-        Assert.assertEquals(piec, oddNumbersExterminator.getSize());
-    }
-}
+   }
