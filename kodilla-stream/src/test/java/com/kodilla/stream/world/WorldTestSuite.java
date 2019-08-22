@@ -13,6 +13,7 @@ public class WorldTestSuite {
     @Test
     public void testGetPeopleQuantity() {
 
+        //Given
         World world = new World();
         Continent europe = new Continent();
         Continent asia = new Continent();
@@ -36,11 +37,11 @@ public class WorldTestSuite {
         africa.countries.add(new Country("Egypt", new BigDecimal("97000000")));
         world.continents.add(africa);
 
+        //When
         BigDecimal result = world.getPeopleQuantity();
         BigDecimal preparedResult = new BigDecimal("494150000");
 
-
-
+        //Then
         Assert.assertEquals(result,preparedResult);
 
 
