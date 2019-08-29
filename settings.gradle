@@ -8,4 +8,5 @@ include 'kodilla-testing'
 include 'com.kodilla.stream'
 include 'stream'
 include 'kodilla-stream'
+include 'kodilla-exception'
 

@@ -2,6 +2,7 @@ package com.kodilla.stream.portfolio;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.mockito.internal.matchers.Contains;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -156,13 +157,20 @@ public class BoardTestSuite {
         //Given
         Board project = prepareTestData();
         Integer now = LocalDate.now().getDayOfYear();
+        List<TaskList> inProgressTasks = new ArrayList<>();
+        inProgressTasks.add(new TaskList("In progress"));
 
-        //When
-        final long sumOfDays = project.getTaskLists().stream()
+
+        final int sumOfDays = project.getTaskLists().stream()
+                .filter(inProgressTasks::contains)
                 .flatMap(taskListInProgress -> taskListInProgress.getTasks().stream())
                 .map(taskListInProgress -> taskListInProgress.getCreated().getDayOfYear())
                 .map(integer -> now - integer)
-                .reduce(1, (sum, current) -> sum = current + sum);
+                .reduce(0, (sum, current) -> sum = current + sum);
+
+
+
+
 
         final long sumOfTasks = project.getTaskLists().stream()
                 .map(taskListInProgress -> taskListInProgress.getTasks().stream())
@@ -170,7 +178,7 @@ public class BoardTestSuite {
 
         int intSumOfTasks = (int)sumOfTasks;
         int intSumOfDays = (int)sumOfDays;
-        int average = intSumOfDays/ intSumOfTasks;
+        int average = sumOfDays/ intSumOfTasks;
 
         //Then
         Assert.assertEquals(3,intSumOfTasks);

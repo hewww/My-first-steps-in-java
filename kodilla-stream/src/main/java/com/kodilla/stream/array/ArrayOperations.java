@@ -8,7 +8,7 @@ public interface ArrayOperations {
 
         IntStream.of(numbers).forEach(number -> System.out.println(number));
         IntStream streamAverage = IntStream.of(numbers);
-        double average = streamAverage.average().getAsDouble();
+        double average = streamAverage.average(). getAsDouble();
         return average;
     }
 }
