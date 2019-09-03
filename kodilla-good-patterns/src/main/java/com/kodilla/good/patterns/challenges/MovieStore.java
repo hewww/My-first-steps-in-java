@@ -33,21 +33,4 @@ public class MovieStore {
 
         return booksTitlesWithTranslations;
     }
-
-
-    public void show() {
-
-        MovieStore movieStore = new MovieStore();
-        movieStore.getMovies().entrySet().stream()
-                .flatMap(s -> s.getValue().stream())
-                .collect(Collectors.toList())
-                .forEach(s -> System.out.print(" " + s + " " + "!"));
-
-
-    }
-
-    public static void main(String[] args) {
-        MovieStore movieStore = new MovieStore();
-        movieStore.show();
-    }
 }
