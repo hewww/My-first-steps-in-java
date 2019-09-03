@@ -35,17 +35,19 @@ public class MovieStore {
     }
 
 
-    public static void main(String[] args) {
+    public void show() {
 
         MovieStore movieStore = new MovieStore();
-        List<String> cos = movieStore.getMovies().entrySet().stream()
+        movieStore.getMovies().entrySet().stream()
                 .flatMap(s -> s.getValue().stream())
-                .collect(Collectors.toList());
+                .collect(Collectors.toList())
+                .forEach(s -> System.out.print(" " + s + " " + "!"));
 
 
-        for (String movie : cos) {
-            System.out.print(" " + movie +" " + "!");
-        }
+    }
 
+    public static void main(String[] args) {
+        MovieStore movieStore = new MovieStore();
+        movieStore.show();
     }
 }
