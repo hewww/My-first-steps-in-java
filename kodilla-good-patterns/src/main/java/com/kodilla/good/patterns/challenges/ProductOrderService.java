@@ -1,17 +1,25 @@
 package com.kodilla.good.patterns.challenges;
 
 
+import com.sun.org.apache.xpath.internal.operations.Or;
+
 public class ProductOrderService {
 
-    private Order order;
-    private OrderProcessor orderProcessor;
-    private OrderRespository orderRespository;
+    private OrderRequest orderRequest;
 
-    public ProductOrderService(final Order order,
-                               final OrderProcessor orderProcessor,
-                               final OrderRespository orderRespository) {
-        this.order = order;
-        this.orderProcessor = orderProcessor;
-        this.orderRespository = orderRespository;
+    public ProductOrderService() {
+
+    }
+
+
+    public boolean order(User user, Item item, Integer ammount) {
+        if(ammount > item.getQuantity()){
+            System.out.println("Niestety posiadamy tylko " + item.getQuantity() + " szt");
+            return false;
+        } else {
+            System.out.println("Zamówiono");
+            return true;
+        }
+
     }
 }

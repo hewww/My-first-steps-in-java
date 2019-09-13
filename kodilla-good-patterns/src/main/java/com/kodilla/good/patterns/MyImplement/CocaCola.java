@@ -7,19 +7,18 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class CocaCola implements Producent {
-    public String companyName;
-    public List<Product> products;
+    public String companyName = "CocaCola";
+    public List<Product> products = new ArrayList<>();
 
-    public List<Product> products() {
-        List<Product> products = new ArrayList<>();
-        products.add(new Product("CocaCola 0,5L",500,"szt"));
-        products.add(new Product("CocaCola 1,5L",400,"szt"));
-        products.add(new Product("CocaCola 2L",500,"szt"));
-        return products;
+    public CocaCola() {
+        products.add(new Product("CocaCola 0,5L", 500, "szt"));
+        products.add(new Product("CocaCola 1,5L", 400, "szt"));
+        products.add(new Product("CocaCola 2L", 500, "szt"));
     }
 
     @Override
     public boolean process() {
+        System.out.println("Process");
         return true;
     }
 
@@ -29,5 +28,13 @@ public class CocaCola implements Producent {
 
     public List<Product> getProducts() {
         return products;
+    }
+
+    @Override
+    public String toString() {
+        return "CocaCola{" +
+                "companyName='" + companyName + '\'' +
+                ", products=" + products +
+                '}';
     }
 }

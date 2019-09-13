@@ -5,12 +5,16 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        ProducentFactory producentFactory = new ProducentFactory();
+        List<Producent> producentsList = new ArrayList<>();
+        producentsList.add(producentFactory.generateProducent("CocaCola"));
+
+        System.out.println(producentsList.get(0));
 
 
-        CocaCola cocaCola = new CocaCola();
-        GetProduct getProduct = new GetProduct();
 
-        getProduct.getProducts(cocaCola);
+
+
 
     }
 }
