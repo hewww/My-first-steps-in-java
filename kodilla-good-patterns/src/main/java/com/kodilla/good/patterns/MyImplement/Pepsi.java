@@ -1,24 +1,21 @@
 package com.kodilla.good.patterns.MyImplement;
 
-import sun.plugin2.gluegen.runtime.CPU;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
-public class CocaCola implements Producent {
-    public String companyName = "CocaCola";
+public class Pepsi implements Producent {
+    public String companyName = "Pepsi";
     public List<Product> products = new ArrayList<>();
 
-    public CocaCola() {
-        products.add(new Product("CocaCola 0,5L", 500, "szt"));
-        products.add(new Product("CocaCola 1,5L", 400, "szt"));
-        products.add(new Product("CocaCola 2L", 500, "szt"));
+    public Pepsi() {
+        products.add(new Product("Pepsi 0,5L", 500, "szt"));
+        products.add(new Product("Pepsi 1,5L", 400, "szt"));
+        products.add(new Product("Pepsi 2L", 500, "szt"));
     }
 
     @Override
     public boolean process() {
-        System.out.println("Coca Cola Process");
+        System.out.println("Pepsi Process");
         return true;
     }
 
@@ -32,7 +29,7 @@ public class CocaCola implements Producent {
 
     @Override
     public String toString() {
-        return "CocaCola{" +
+        return "Pepsi{" +
                 "companyName='" + companyName + '\'' +
                 ", products=" + products +
                 '}';

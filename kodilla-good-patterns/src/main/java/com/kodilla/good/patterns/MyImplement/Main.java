@@ -8,8 +8,12 @@ public class Main {
         ProducentFactory producentFactory = new ProducentFactory();
         List<Producent> producentsList = new ArrayList<>();
         producentsList.add(producentFactory.generateProducent("CocaCola"));
+        producentsList.add(producentFactory.generateProducent("Pepsi"));
+        producentsList.add(producentFactory.generateProducent("Nestle"));
 
-        System.out.println(producentsList.get(0));
+        producentsList.forEach(producent -> producent.process());
+
+
 
 
 
