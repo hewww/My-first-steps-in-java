@@ -3,7 +3,7 @@ package com.kodilla.good.patterns.good.patterns.Airport;
 import java.time.LocalDate;
 
 public class FlightsImpl {
-    private FlyList flyList;
+    private FlyList flyList = new FlyList();
 
     public void addFlights() {
         Fly fly = new Fly("Gdańsk","Warszawa", LocalDate.of(2019,12,10));
@@ -14,4 +14,6 @@ public class FlightsImpl {
         flyList.flightList.add(fly2);
         flyList.flightList.add(fly3);
     }
+
+
 }

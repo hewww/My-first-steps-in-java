@@ -3,7 +3,7 @@ import java.util.stream.Collectors;
 
 public class FlightFinder {
     private Fly fly;
-    private FlyList flyList;
+    private FlyList flyList = new FlyList();
 
     public void findFlightTo(String cityTo) {
         flyList.flightList.stream()
