@@ -25,6 +25,5 @@ public class BoardTestSuite {
         Assert.assertEquals(board.getToDoList().tasks.size(), 1);
         Assert.assertEquals(board.getDoneList().tasks.size(), 0);
         Assert.assertEquals(board.getInProgressList().tasks.size(),0);
-
     }
 }
