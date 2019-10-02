@@ -14,7 +14,7 @@ public class Item {
     private BigDecimal price;
     private int quantity;
     private BigDecimal value;
-
+    private List<Invoice> invoices = new ArrayList<>();
 
     public Item(Product product, BigDecimal price, int quantity, BigDecimal value) {
         this.product = product;
@@ -39,7 +39,7 @@ public class Item {
     }
 
     @ManyToOne
-    @JoinColumn(name = "PRODUCT_ID")
+    @JoinColumn(name = "INVOICE_ID")
     public Product getProduct() {
         return product;
     }
@@ -56,6 +56,7 @@ public class Item {
     public void setPrice(BigDecimal price) {
         this.price = price;
     }
+
     @Column(name = "ITEM_QUANTITY")
     public int getQuantity() {
         return quantity;

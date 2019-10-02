@@ -8,8 +8,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
 import java.math.BigDecimal;
+
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -39,16 +39,25 @@ public class InvoiceDaoTestSuite {
         invoice.getItems().add(teddyBearItem);
         invoice.getItems().add(beerItem);
 
-        productDao.save(beer);
-        productDao.save(book);
-        productDao.save(teddyBear);
+//        productDao.save(book);
+//        productDao.save(teddyBear);
+//        productDao.save(beer);
+//
+//        itemDao.save(bookItem);
+//        itemDao.save(teddyBearItem);
+//        itemDao.save(beerItem);
 
-        itemDao.save(bookItem);
-        itemDao.save(teddyBearItem);
-        itemDao.save(beerItem);
+        invoiceDao.save(invoice);
+        int invoiceID = invoice.getId();
 
-        
 
+
+        //CleanUp
+//        try {
+//            invoiceDao.deleteById(invoiceID);
+//        } catch (Exception e) {
+//            System.out.println("Błąd");
+//        }
 
     }
 
