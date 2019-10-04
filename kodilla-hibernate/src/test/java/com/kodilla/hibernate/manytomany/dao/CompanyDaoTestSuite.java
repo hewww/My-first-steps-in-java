@@ -10,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
@@ -52,10 +53,15 @@ public class CompanyDaoTestSuite {
         companyDao.save(greyMatter);
         int greyMatterId = greyMatter.getId();
 
-        //Then
-        Assert.assertNotEquals(0, softwareMachineId);
-        Assert.assertNotEquals(0, dataMaestersId);
-        Assert.assertNotEquals(0, greyMatterId);
+        try {
+            Assert.assertNotEquals(0, softwareMachineId);
+            Assert.assertNotEquals(0, dataMaestersId);
+            Assert.assertNotEquals(0, greyMatterId);
+        } finally {
+            companyDao.delete(softwareMachine);
+            companyDao.delete(dataMaesters);
+            companyDao.delete(greyMatter);
+        }
     }
 
     @Test
@@ -94,7 +100,9 @@ public class CompanyDaoTestSuite {
         try {
             Assert.assertEquals(1, xxx.size());
         } finally {
-            //companyDao.deleteAll();
+            companyDao.delete(softwareMachine);
+            companyDao.delete(dataMaesters);
+            companyDao.delete(greyMatter);
         }
     }
 
@@ -130,18 +138,14 @@ public class CompanyDaoTestSuite {
         companyDao.save(greyMatter);
         int greyMatterIdd = greyMatter.getId();
 
-
-        List<Company> result = companyDao.retrieveCompanyByLetters("Gre");
-
-        System.out.println(result.size());
-
-
-
-
-
-        //companyDao.deleteAll();
-
-
+        try {
+            List<Company> result = companyDao.retrieveCompanyByLetters("Gre");
+            System.out.println(result.size());
+        } finally {
+            companyDao.delete(softwareMachine);
+            companyDao.delete(dataMaesters);
+            companyDao.delete(greyMatter);
+        }
 
     }
 }
