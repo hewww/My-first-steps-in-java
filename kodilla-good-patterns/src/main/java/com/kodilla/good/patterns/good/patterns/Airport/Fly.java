@@ -40,4 +40,13 @@ public class Fly {
     public int hashCode() {
         return Objects.hash(from, to, date);
     }
+
+    @Override
+    public String toString() {
+        return "Lot " +
+                "Odlot " + from + '\'' +
+                ",Przylot " + to + '\'' +
+                ",Data " + date +
+                '}';
+    }
 }
