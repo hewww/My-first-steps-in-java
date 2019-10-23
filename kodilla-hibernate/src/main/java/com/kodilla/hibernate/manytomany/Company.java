@@ -8,7 +8,6 @@ import java.util.List;
         name = "Company.retrieveCompanyByLetters",
         query = "SELECT * FROM COMPANIES WHERE SUBSTR(COMPANY_NAME, 1, 3) = :LETTERS",
         resultClass = Company.class
-
 )
 @Entity
 @Table(name = "COMPANIES")

@@ -3,6 +3,7 @@ package com.kodilla.hibernate.invoice.dao;
 import com.kodilla.hibernate.invoice.Invoice;
 import com.kodilla.hibernate.invoice.Item;
 import com.kodilla.hibernate.invoice.Product;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,27 +40,17 @@ public class InvoiceDaoTestSuite {
         invoice.getItems().add(teddyBearItem);
         invoice.getItems().add(beerItem);
 
-//        productDao.save(book);
-//        productDao.save(teddyBear);
-//        productDao.save(beer);
-//
-//        itemDao.save(bookItem);
-//        itemDao.save(teddyBearItem);
-//        itemDao.save(beerItem);
 
         invoiceDao.save(invoice);
         int invoiceID = invoice.getId();
-
-
+        int size = invoice.getItems().size();
+        Assert.assertEquals(3,size);
 
         //CleanUp
-//        try {
-//            invoiceDao.deleteById(invoiceID);
-//        } catch (Exception e) {
-//            System.out.println("Błąd");
-//        }
-
+        try {
+            invoiceDao.deleteById(invoiceID);
+        } catch (Exception e) {
+           System.out.println("Błąd");
+        }
     }
-
-
 }
