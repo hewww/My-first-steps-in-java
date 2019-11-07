@@ -1,31 +1,66 @@
 package com.kodilla.good.patterns.good.patterns.Airport;
 
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
 public class FlightFinder {
     private Fly fly;
     private FlyList flyList = new FlyList();
 
-    public void findFlightTo(String cityTo) {
-        flyList.flighList().stream()
+    public List findFlightTo(String cityTo) {
+        List<Fly> flightTo = flyList.flighList().stream()
                 .filter(s -> s.getTo().equals(cityTo))
-                .forEach(System.out::println);
+                .collect(Collectors.toList());
+        return flightTo;
     }
 
-    public void findFlightFrom(String cityFrom) {
-        flyList.flighList().stream()
-                .filter(s -> s.getTo().equals(cityFrom))
-                .forEach(System.out::println);
-    }
-
-    public void foundFlyBetween(String cityFrom, String between, String cityTo) {
-        flyList.flighList().stream()
+    public List findFlightFrom(String cityFrom) {
+        List<Fly> flightFrom  = flyList.flighList().stream()
                 .filter(s -> s.getFrom().equals(cityFrom))
-                .filter(s -> s.getTo().equals(between))
-                .forEach(System.out::println);
+                .collect(Collectors.toList());
+        return flightFrom;
+    }
 
-        flyList.flighList().stream()
-                .filter(s -> s.getFrom().equals(between))
+    public void foundFlyBetween(String cityFrom, String cityTo) {
+          List<String> result = flyList.flighList().stream()
                 .filter(s -> s.getTo().equals(cityTo))
-                .forEach(System.out::println);
+                  .map(s -> s.getFrom())
+                  .collect(Collectors.toList());
+
+          System.out.println("RESULT " + result.toString());
+
+          List<Fly> flightTo = flyList.flighList().stream()
+                .filter(s -> s.getTo().equals(result.get(0)))
+                .collect(Collectors.toList());
+
+          List<Fly> flightFrom  = flyList.flighList().stream()
+                .filter(s -> s.getFrom().equals(result.get(0)))
+                .collect(Collectors.toList());
+
+          System.out.println(flightTo.toString());
+          System.out.println(flightFrom.toString());
+
+          boolean equlist = flightTo.containsAll(flightFrom);
+
+          System.out.println(equlist);
+
+//gd waw poz
+
+
+//        flyList.flighList().stream()
+//                .filter(s -> s.getTo().equals(result::get))
+//                .forEach(System.out::println);
+
+//        flyList.flighList().stream()
+//                .filter(s -> s.getTo().equals(result))
+//                .filter(s -> s.getFrom().equals(cityFrom))
+//                .forEach(System.out::println);
+
+
     }
 }

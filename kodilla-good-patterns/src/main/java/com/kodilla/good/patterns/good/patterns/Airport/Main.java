@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
 
         FlightFinder flightFinder = new FlightFinder();
-        flightFinder.foundFlyBetween("Gdańsk","Warszawa","Poznan");
+        flightFinder.foundFlyBetween("Gdańsk","Poznan");
 
     }
 }
