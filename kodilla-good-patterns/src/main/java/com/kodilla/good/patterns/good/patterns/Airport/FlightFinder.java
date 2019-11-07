@@ -45,22 +45,5 @@ public class FlightFinder {
           System.out.println(flightTo.toString());
           System.out.println(flightFrom.toString());
 
-          boolean equlist = flightTo.containsAll(flightFrom);
-
-          System.out.println(equlist);
-
-//gd waw poz
-
-
-//        flyList.flighList().stream()
-//                .filter(s -> s.getTo().equals(result::get))
-//                .forEach(System.out::println);
-
-//        flyList.flighList().stream()
-//                .filter(s -> s.getTo().equals(result))
-//                .filter(s -> s.getFrom().equals(cityFrom))
-//                .forEach(System.out::println);
-
-
     }
 }
