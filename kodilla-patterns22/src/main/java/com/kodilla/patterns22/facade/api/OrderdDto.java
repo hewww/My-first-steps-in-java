@@ -1,6 +1,4 @@
-package facade.api;
-
-import facade.Item;
+package com.kodilla.patterns22.facade.api;
 
 import java.util.ArrayList;
 import java.util.List;

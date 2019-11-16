@@ -1,4 +1,4 @@
-package facade;
+package com.kodilla.patterns22.facade;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

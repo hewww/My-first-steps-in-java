@@ -1,4 +1,4 @@
-package facade;
+package com.kodilla.patterns22.facade;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
